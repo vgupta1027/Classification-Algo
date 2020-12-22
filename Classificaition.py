@@ -14,6 +14,13 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix,recall_score,precision_score,accuracy_score
+import streamlit.components.v1 as components
+
+
+
+st.set_page_config(page_title="DataZilla",page_icon='/Users/vaigupta/Documents/DS/StreamLit/zilla.jpeg',  initial_sidebar_state = 'auto')
+st.image('/Users/vaigupta/Documents/DS/StreamLit/zilla.jpeg',width=500,use_column_width=True)
+
 
 
 hide_streamlit_style = """
@@ -27,9 +34,10 @@ st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.title("Classfication Algorthims Handy")
 
 data_load=st.sidebar.file_uploader("Upload your CSV",type='csv')
-row_display=st.sidebar.slider("Show Rows",0,100,10,10)
+
 
 if data_load is not None:
+    row_display=st.sidebar.slider("Show Rows",0,100,10,10)
     model_input=pd.read_csv(data_load)
     
     if st.sidebar.button("Show Data"):
@@ -75,6 +83,51 @@ if data_load is not None:
         
 else:
     st.write("Please upload a data source")    
+    st.markdown("""
+                    
+                                        <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                      <title>Bootstrap Example</title>
+                      <meta charset="utf-8">
+                      <meta name="viewport" content="width=device-width, initial-scale=1">
+                      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+                    </head>
+                    <body>
+                    
+                    
+                      <h2>Modal Example</h2>
+                      <!-- Trigger the modal with a button -->
+                      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                    
+                      <!-- Modal -->
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Modal Header</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Some text in the modal.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    
+                    </body>
+                    </html>
+                    
+                    """)
+
 
 
 
