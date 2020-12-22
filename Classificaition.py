@@ -19,7 +19,7 @@ import streamlit.components.v1 as components
 
 
 st.set_page_config(page_title="DataZilla",page_icon='zilla.jpeg',  initial_sidebar_state = 'auto')
-st.image('/Users/vaigupta/Documents/DS/StreamLit/zilla.jpeg',width=500,use_column_width=True)
+#st.image('/Users/vaigupta/Documents/DS/StreamLit/zilla.jpeg',width=500,use_column_width=True)
 
 
 
